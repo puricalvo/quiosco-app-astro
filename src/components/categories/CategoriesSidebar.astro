@@ -1,0 +1,15 @@
+---
+    import Logo from '@/assets/logo.svg'
+    import { CategoriesSchema } from '@/types'
+    import CategoryCard from '@/components/categories/CategoryCard.astro'
+    const res = await fetch(`${import.meta.env.API_URL}/freshcoffee_categories`)
+    const json = await res.json()
+    const categories = CategoriesSchema.parse(json)
+---
+<aside class="md:w-80 md:h-screen border-r border-gray-200">
+    <div class="flex justify-center p-5">
+        <Logo />
+    </div>
+    {categories.map(category => <CategoryCard category={category} />)}
+
+</aside>
