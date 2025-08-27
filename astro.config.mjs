@@ -13,7 +13,7 @@ export default defineConfig({
       plugins: [tailwindcss()]
   },
   image: {
-    domains: ['http://localhost:10010']
+    domains: ['localhost:10010']
   },
   output: 'server',
   integrations: [react(), vue()],

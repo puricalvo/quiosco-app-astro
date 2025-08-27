@@ -7,14 +7,19 @@ export const auth = {
     signInAsGuest: defineAction({
         handler: async (input, ctx) => {
             const res = await fetch(`${import.meta.env.AUTH_URL}`, {
+                
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json'
                 },
+                
                 body: JSON.stringify(guestCredentials)
+                
             })
-
+                
+            console.log("Status:", res.status);
             const json = await res.json()
+            console.log("Response:", json);
             ctx.cookies.set('FRESHCOFFEE_TOKEN', json.token, {
                 httpOnly: true,
                 sameSite: 'strict',
