@@ -23,3 +23,6 @@ pnpm-debug.log*
 # jetbrains setting folder
 .idea/
 wp-config.php
+
+# Local Netlify folder
+.netlify

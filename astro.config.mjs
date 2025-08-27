@@ -1,6 +1,7 @@
 // @ts-check
 import tailwindcss from '@tailwindcss/vite';
 import { defineConfig } from 'astro/config';
+import netlify from '@astrojs/netlify';
 
 import react from '@astrojs/react';
 
@@ -11,7 +12,10 @@ export default defineConfig({
   vite: {
       plugins: [tailwindcss()]
   },
-
+  image: {
+    domains: ['http://localhost:10010']
+  },
   output: 'server',
-  integrations: [react(), vue()]
+  integrations: [react(), vue()],
+  adapter: netlify(),
 });
