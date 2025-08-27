@@ -1,5 +1,5 @@
 ---
-import { Picture } from 'astro:assets'
+
 import ProductMenu from './ProductMenu'
 import type { Product } from '@/types'
 
@@ -13,12 +13,11 @@ const { products } = Astro.props
       products.map((product) => (
         <tr>
           <td class="whitespace-nowrap px-3 py-4 text-sm text-gray-500">
-                <Picture 
+                <img 
                     src={product.featured_images.medium.url}
                     alt={`Imagen del Producto ${product.title.rendered}`}
                     width={product.featured_images.medium.width}
                     height={product.featured_images.medium.height}
-                    formats={['avif', 'webp']}
                     class="size-28 object-cover rounded-lg"
                 />
           </td>

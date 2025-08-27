@@ -1,5 +1,5 @@
 ---
-    import { Picture } from 'astro:assets'
+    
     import type { Category } from '@/types'
     interface Props {
         category: Category
@@ -8,7 +8,7 @@
     const currentCategory = () => category.slug === Astro.params.category
 ---
 <div class={` ${currentCategory() && 'bg-amber-400'}  flex items-center gap-4 p-3 border-t border-gray-200 last-of-type:border-b `}>
-    <Picture 
+    <img 
         src={category.acf.icon}
         alt={`Imagen de Categoría ${category.name}`}
         width={300}
