@@ -13,7 +13,7 @@ export default defineConfig({
       plugins: [tailwindcss()]
   },
   image: {
-    domains: ['localhost:10010']
+    domains: ['freshcoffee.loca.lt']
   },
   output: 'server',
   integrations: [react(), vue()],
